@@ -27,7 +27,7 @@ namespace XKCDevsTimeTracker
 				TimeSpan breaks = new TimeSpan();
 				foreach (var Break in Breaks)
 				{
-					breaks.Add(Break.BreakDuration);
+					breaks += Break.BreakDuration;
 				}
 
 				return total - breaks;
