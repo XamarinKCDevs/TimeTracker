@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:XKCDevsTimeTracker" x:Class="XKCDevsTimeTracker.XKCDevsTimeTrackerPage">
+	<ContentPage.Padding>
+	        <OnPlatform x:TypeArguments="Thickness" 
+			iOS="0, 20, 0, 0" WinPhone="20,20,20,20" />
+	</ContentPage.Padding>
+		
+	<StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+		<Label Text="XamKCDevs Time Tracker" VerticalOptions="Center" HorizontalOptions="Center" />
+
+		<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+
+			<Button x:Name="StartStopButton" Text="Start Time" BackgroundColor="Green" 
+				TextColor="White" Clicked="StartStopButtonClick" />
+			
+			<Button x:Name="BreakButton" Text="Start a Break" BackgroundColor="Gray" 
+				TextColor="Aqua" IsEnabled="false" Clicked="BreakButtonClick" />
+
+		</StackLayout>
+		<ListView x:Name="TimeEntriesListView">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<TextCell Text="{Binding DisplayString}" />
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentPage>
